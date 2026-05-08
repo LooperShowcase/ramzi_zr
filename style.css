@@ -1,0 +1,275 @@
+
+
+div{background-color: rgb(67, 182, 221);}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Arial', sans-serif;
+    line-height: 1.6;
+   
+    background-color: rgb(105, 238, 176);
+    color: #333;
+    padding: 20px;
+}
+
+/* Main heading */
+h1 {
+    text-align: center;
+    color: #307ac4;
+    margin-bottom: 20px;
+    font-size: 3em;
+}
+
+/* Subheadings */
+h3 {
+    color: #3c83e7;
+    margin-top: 30px;
+    margin-bottom: 10px;
+    font-size: 1.8em;
+}
+
+h4 {
+    color: #34495e;
+    margin-left: 20px;
+    font-size: 1.2em;
+    margin-bottom: 5px;
+}
+
+/* Paragraph styling */
+p {
+    margin-bottom: 20px;
+    font-size: 1em;
+    line-height: 1.8;
+    text-align: justify;
+}
+
+/* Images */
+img {
+    display: block;
+    margin: 20px auto;
+    border-radius: 10px;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+}
+
+/* Div containers */
+div {
+    margin-bottom: 20px;
+    padding: 10px;
+    background-color: #03febf;
+    border-radius: 10px;
+    box-shadow: 0 3px 10px rgba(0,0,0,0.1);
+}
+
+/* Make images responsive */
+@media (max-width: 768px) {
+    img {
+        width: 80%;
+    }
+}
+
+/* Life section paragraph */
+div + p {
+    padding: 15px;
+    background-color: #11ebef;
+    border-left: 4px solid #0a1620;
+
+
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f4;
+    color: #333;
+    margin: 0;
+    padding: 20px;
+}
+
+h1 {
+    text-align: center;
+    color: #2c3e50;
+}
+
+.gallery {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    justify-content: center;
+    margin-top: 30px;
+}
+
+.gallery-item {
+    position: relative;
+    width: 250px;
+    height: 250px;
+    border-radius: 15px;
+    overflow: hidden;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+}
+
+.gallery-item img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.3s ease-in-out;
+}
+
+.gallery-item:hover img {
+    transform: scale(1.1);
+}
+
+.overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(0, 0, 0, 0.6);
+    color: #fff;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    opacity: 0;
+    transition: opacity 0.3s ease-in-out;
+}
+
+.gallery-item:hover .overlay {
+    opacity: 1;
+}
+
+.trivia {
+    margin-top: 40px;
+    text-align: center;
+}
+
+button {
+    margin: 10px;
+    padding: 10px 20px;
+    background-color: #2c3e50;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 1.1em;
+    transition: background-color 0.3s ease;
+}
+
+button:hover {
+    background-color: #e74c3c;
+}
+
+#result {
+    margin-top: 10px;
+    font-size: 1.2em;
+    color: #e74c3c;
+
+}
+
+#navbar {
+  list-style: none;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 14px;
+
+  padding: 14px 24px;
+  margin: 20px auto;
+
+  width: fit-content;
+
+  background: rgba(20, 20, 30, 0.75);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: 18px;
+
+  box-shadow:
+    0 8px 24px rgba(0, 0, 0, 0.25),
+    inset 0 1px 0 rgba(255, 255, 255, 0.04);
+}
+
+/* Remove default spacing */
+#navbar li {
+  margin: 0;
+  padding: 0;
+}
+
+/* Nav links */
+#navbar a {
+  position: relative;
+  display: block;
+
+  padding: 10px 18px;
+
+  color: #d1d5db;
+  text-decoration: none;
+  font-family: Inter, sans-serif;
+  font-size: 15px;
+  font-weight: 500;
+
+  border-radius: 12px;
+
+  transition:
+    background 0.25s ease,
+    color 0.25s ease,
+    transform 0.2s ease;
+}
+
+/* Hover effect */
+#navbar a:hover {
+  background: rgba(255, 255, 255, 0.08);
+  color: white;
+  transform: translateY(-2px);
+}
+
+/* Animated underline */
+#navbar a::after {
+  content: "";
+  position: absolute;
+
+  left: 18px;
+  bottom: 6px;
+
+  width: 0%;
+  height: 2px;
+
+  background: #6366f1;
+  border-radius: 999px;
+
+  transition: width 0.25s ease;
+}
+
+#navbar a:hover::after,
+#navbar a.active::after {
+  width: calc(100% - 36px);
+}
+
+/* Active link */
+#navbar a.active {
+  background: linear-gradient(
+    135deg,
+    rgba(99, 102, 241, 0.22),
+    rgba(129, 140, 248, 0.12)
+  );
+
+  color: white;
+
+  box-shadow:
+    0 4px 14px rgba(99, 102, 241, 0.25);
+}
+
+/* Mobile responsive */
+@media (max-width: 600px) {
+  #navbar {
+    flex-wrap: wrap;
+    gap: 10px;
+    padding: 12px;
+  }
+
+  #navbar a {
+    padding: 9px 14px;
+    font-size: 14px;
+  }
+}
